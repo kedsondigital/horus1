@@ -1,0 +1,14 @@
+{
+  "name": "horus",
+  "version": "1.0.0",
+  "description": "Hórus - Gestão Financeira e Contábil",
+  "scripts": {
+    "start": "serve -l 3000",
+    "dev": "serve -l 3000"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}

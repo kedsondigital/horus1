@@ -156,15 +156,27 @@
                 <button class="bg-zinc-900 text-white px-4 py-2 rounded-full text-xs font-medium hover:bg-[#b89818] transition-colors hidden md:block">
                     Portal do Cliente
                 </button>
-                <button class="text-zinc-500 hover:text-zinc-900 transition-colors md:hidden">
-                    <iconify-icon icon="solar:hamburger-menu-linear" class="text-2xl"></iconify-icon>
+                <button id="hamburger-btn" onclick="toggleMobileMenu()" class="text-zinc-500 hover:text-zinc-900 transition-colors md:hidden" aria-label="Abrir menu">
+                    <iconify-icon id="hamburger-icon" icon="solar:hamburger-menu-linear" class="text-2xl"></iconify-icon>
+                    <iconify-icon id="close-icon" icon="solar:close-circle-linear" class="text-2xl hidden"></iconify-icon>
                 </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-b border-zinc-200 shadow-lg">
+            <div class="px-6 py-6 flex flex-col gap-4">
+                <a href="#inicio" onclick="closeMobileMenu()" class="text-zinc-700 hover:text-[#b89818] transition-colors py-2 font-medium">Início</a>
+                <a href="#servicos" onclick="closeMobileMenu()" class="text-zinc-700 hover:text-[#b89818] transition-colors py-2 font-medium">Nossos Serviços</a>
+                <a href="#parceiros" onclick="closeMobileMenu()" class="text-zinc-700 hover:text-[#b89818] transition-colors py-2 font-medium">Parceiros</a>
+                <a href="#contato" onclick="closeMobileMenu()" class="text-zinc-700 hover:text-[#b89818] transition-colors py-2 font-medium">Contato</a>
+                <a href="#contato" onclick="closeMobileMenu()" class="text-zinc-700 hover:text-[#b89818] transition-colors py-2 font-medium">Área VIP</a>
+                <a href="#contato" onclick="closeMobileMenu()" class="inline-flex justify-center bg-zinc-900 text-white px-4 py-3 rounded-full text-sm font-medium hover:bg-[#b89818] transition-colors mt-2">Portal do Cliente</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="inicio" class="relative pt-48 pb-24 min-h-[90vh] flex flex-col justify-center overflow-hidden">
+    <section id="inicio" class="relative min-h-[100svh] md:min-h-[90vh] py-24 md:pt-48 md:pb-24 flex flex-col justify-center items-center overflow-hidden">
         
         <!-- Abstract Glows -->
         <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#b89818]/10 blur-[100px] rounded-full pointer-events-none"></div>
@@ -176,7 +188,7 @@
                 <span>Precisa abrir sua empresa ou quer uma contabilidade realmente melhor?</span>
             </div>
 
-            <p class="text-xl md:text-3xl font-light text-zinc-600 mb-4 tracking-tight">A Contabilidade Da Hórus</p>
+            <p class="text-2xl md:text-4xl lg:text-5xl font-light text-zinc-600 mb-4 tracking-tight">A Contabilidade Da Hórus</p>
             
             <h1 class="text-6xl md:text-8xl lg:text-9xl font-light tracking-tighter leading-[0.9] mb-8 flex justify-center flex-wrap gap-x-4 md:gap-x-6">
                 <span class="flex">
@@ -201,10 +213,11 @@
                     <span class="clip-text-container"><span class="animate-letter" style="animation-delay: 0.8s;">o</span></span>
                     <span class="clip-text-container"><span class="animate-letter" style="animation-delay: 0.85s;">s</span></span>
                 </span>
+                <span class="hidden lg:flex text-2xl lg:text-4xl xl:text-5xl font-light text-zinc-900 tracking-tighter leading-[0.9] items-center lg:whitespace-nowrap">O Que O Mercado Costuma Levar Semanas Para Entregar</span>
             </h1>
-            <p class="text-xl md:text-3xl font-light text-zinc-400 tracking-tighter mb-4 max-w-4xl mx-auto leading-tight text-center">O Que Outros Escritórios Pedem Semanas Para Entregar A Solução</p>
+            <p class="lg:hidden text-2xl md:text-4xl lg:text-5xl font-light text-zinc-900 tracking-tighter mb-4 max-w-5xl mx-auto leading-tight text-center">O Que O Mercado Costuma Levar Semanas Para Entregar</p>
 
-            <p class="text-lg md:text-xl text-zinc-500 font-light max-w-2xl mx-auto mb-12 leading-relaxed tracking-tight">
+            <p class="text-sm md:text-lg lg:text-xl text-zinc-500 font-light max-w-2xl mx-auto mb-12 leading-snug md:leading-relaxed tracking-tight">
                 Abertura de CNPJ, contabilidade mensal, certificado digital na hora e suporte humano que atende quando você precisa. Em todo o Brasil.
             </p>
 
@@ -263,8 +276,8 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="mb-16">
                 <p class="text-xs uppercase tracking-widest text-zinc-400 mb-6">Por que as pessoas chegam até a Hórus</p>
-                <h2 class="text-4xl md:text-5xl tracking-tighter font-light mb-6">"Eu pago todo mês, mas na hora que preciso, parece que estou pedindo um favor."</h2>
-                <p class="text-lg text-zinc-500 font-light max-w-xl">Se você ainda não tem uma empresa, a frase acima é a realidade hoje no mercado de contabilidade. Todos os dias, as pessoas chegam até a Hórus com os seguintes problemas:</p>
+                <h2 class="text-4xl md:text-5xl tracking-tighter font-light mb-6">"Eu quero uma contabilidade que funcione quando eu preciso com agilidade, clareza e suporte real."</h2>
+                <p class="text-lg text-zinc-500 font-light max-w-xl">Todos os dias, empresários chegam até a Hórus buscando algo que parece simples: agilidade, organização e atendimento quando precisam.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -272,8 +285,8 @@
                 <div class="lg:col-span-2 card-flashlight rounded-3xl p-8 shadow-sm">
                     <div class="relative z-10">
                         <iconify-icon icon="solar:timer-linear" class="text-3xl text-[#b89818] mb-6 block"></iconify-icon>
-                        <p class="text-lg font-light italic text-zinc-700 mb-4">"A gente aceita de contador o que não aceitaria de nenhum outro profissional."</p>
-                        <p class="text-sm text-zinc-500 font-light leading-relaxed">Você paga um contador todo mês, sem falta — e quando precisa de um documento, espera 15 dias. Quando liga, ninguém atende. Quando finalmente atendem, pedem mais prazo. Quando entregam, vêm com erros.</p>
+                        <p class="text-lg font-light italic text-zinc-700 mb-4">"Na Hórus, quando você precisa, está pronto."</p>
+                        <p class="text-sm text-zinc-500 font-light leading-relaxed">Na Hórus, quando você precisa de um documento, ele já está no app. Quando liga, alguém atende. Quando pede algo, recebe em minutos. Esse é o nosso padrão.</p>
                     </div>
                 </div>
 
@@ -281,8 +294,8 @@
                 <div class="card-flashlight rounded-3xl p-8 shadow-sm">
                     <div class="relative z-10">
                         <iconify-icon icon="solar:building-linear" class="text-3xl text-[#b89818] mb-6 block"></iconify-icon>
-                        <p class="text-lg font-light italic text-zinc-700 mb-4">"Quero abrir empresa, mas tenho medo de escolher errado e me ferrar com a Receita."</p>
-                        <p class="text-sm text-zinc-500 font-light leading-relaxed">Um desenvolvedor recebeu proposta de R$12 mil/mês como PJ. Não tinha CNPJ. Enquanto pesquisava como abrir, a empresa contratou outro. Perdeu R$72 mil no ano. Não por incompetência. Por burocracia.</p>
+                        <p class="text-lg font-light italic text-zinc-700 mb-4">"Quero abrir empresa, mas não sei por onde começar e tenho medo de errar no enquadramento."</p>
+                        <p class="text-sm text-zinc-500 font-light leading-relaxed">É comum profissionais perderem oportunidades por não terem CNPJ pronto a tempo. Na Hórus, a abertura acontece em dias — pra você não perder a próxima proposta.</p>
                     </div>
                 </div>
 
@@ -290,8 +303,8 @@
                 <div class="card-flashlight rounded-3xl p-8 shadow-sm">
                     <div class="relative z-10">
                         <iconify-icon icon="solar:phone-cross-linear" class="text-3xl text-[#b89818] mb-6 block"></iconify-icon>
-                        <p class="text-lg font-light italic text-zinc-700 mb-4">"Ligo para o meu contador e ninguém atende. Quando atende, não resolve."</p>
-                        <p class="text-sm text-zinc-500 font-light leading-relaxed">Um médico faturou R$40 mil em plantões. O banco pediu demonstrações financeiras. O escritório dele demorou. O dinheiro ficou travado por semanas. Não era um contador ruim. Era um contador que não era rápido o suficiente.</p>
+                        <p class="text-lg font-light italic text-zinc-700 mb-4">"Preciso de agilidade e suporte acessível para minha empresa."</p>
+                        <p class="text-sm text-zinc-500 font-light leading-relaxed">Na Hórus, demonstrações financeiras ficam disponíveis no app. Quando o banco pede algo, o cliente abre o celular e resolve em minutos — sem esperar, sem depender de ninguém.</p>
                     </div>
                 </div>
 
@@ -299,8 +312,8 @@
                 <div class="card-flashlight rounded-3xl p-8 shadow-sm">
                     <div class="relative z-10">
                         <iconify-icon icon="solar:document-text-linear" class="text-3xl text-[#b89818] mb-6 block"></iconify-icon>
-                        <p class="text-lg font-light italic text-zinc-700 mb-4">"Abri meu CNPJ sozinho. Nunca tive contabilidade de verdade. Torço para estar tudo certo."</p>
-                        <p class="text-sm text-zinc-500 font-light leading-relaxed">Uma fisioterapeuta abriu um MEI seguindo tutorial do YouTube. Escolheu o CNAE errado. Seis meses depois: notificação, multa, retroativo. Ela achava que estava tudo certo.</p>
+                        <p class="text-lg font-light italic text-zinc-700 mb-4">"Abri meu CNPJ por conta própria e quero ter certeza de que está tudo organizado."</p>
+                        <p class="text-sm text-zinc-500 font-light leading-relaxed">É comum empresários que abrem sozinhos escolherem o enquadramento errado e só descobrirem quando já gerou custo. Na Hórus, o enquadramento é definido pela equipe desde o primeiro dia.</p>
                     </div>
                 </div>
 
@@ -308,8 +321,8 @@
                 <div class="card-flashlight rounded-3xl p-8 shadow-sm">
                     <div class="relative z-10">
                         <iconify-icon icon="solar:bill-cross-linear" class="text-3xl text-[#b89818] mb-6 block"></iconify-icon>
-                        <p class="text-lg font-light italic text-zinc-700 mb-4">"Meu contador erra, atrasa, e quem paga a multa sou eu."</p>
-                        <p class="text-sm text-zinc-500 font-light leading-relaxed">Um empresário precisava de crédito para expandir. O banco pediu balanço. O contador entregou tarde demais. Os documentos venceram. O crédito foi negado. O crescimento parou.</p>
+                        <p class="text-lg font-light italic text-zinc-700 mb-4">"Quero uma contabilidade que cumpra prazos e me dê segurança."</p>
+                        <p class="text-sm text-zinc-500 font-light leading-relaxed">Na Hórus, documentos como balanço patrimonial ficam disponíveis no app. Quando o banco pede, o cliente tem na hora. Sem atraso, sem documento vencido.</p>
                     </div>
                 </div>
             </div>
@@ -345,7 +358,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             
             <div class="mb-20">
-                <h2 class="text-4xl md:text-5xl tracking-tighter font-light mb-6">O que você vai encontrar na Hórus<br>e não encontra em nenhuma outra contabilidade</h2>
+                <h2 class="text-4xl md:text-5xl tracking-tighter font-light mb-6">O que você encontra na Hórus</h2>
                 <p class="text-lg text-zinc-500 font-light max-w-xl leading-relaxed tracking-tight">
                     A verdade é que não fazemos nada de outro mundo. A gente atende o telefone. Entrega seu documento rápido. Avisa quando muda a lei. Trata cada cliente como gente, não como número. Isso deveria ser o mínimo.
                 </p>
@@ -353,31 +366,31 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Card 1 -->
-                <div class="lg:col-span-2 card-flashlight rounded-3xl p-8 pb-0 flex flex-col group cursor-pointer shadow-sm">
+                <div class="lg:col-span-2 card-flashlight rounded-3xl p-8 pb-6 md:pb-0 flex flex-col group cursor-pointer shadow-sm">
                     <div class="relative z-10 flex flex-col h-full">
-                        <div class="flex justify-between items-start mb-12">
+                        <div class="flex justify-between items-start mb-8 md:mb-12">
                             <h3 class="text-2xl tracking-tight font-light max-w-xs">App próprio com tudo na sua mão</h3>
                             <div class="w-10 h-10 rounded-full border border-zinc-200 flex items-center justify-center bg-white opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 group-hover:text-[#b89818] group-hover:border-[#b89818]/30">
                                 <iconify-icon icon="solar:arrow-right-up-linear" class="text-lg"></iconify-icon>
                             </div>
                         </div>
                         <p class="text-sm text-zinc-500 font-light mb-4">Documentos, guias, boletos — abre, baixa, copia o código e paga. Está no banco e o gerente pediu algo? Abre o app e mostra na tela. Sem ligar para ninguém.</p>
-                        <div class="mt-auto aspect-[21/9] rounded-t-2xl overflow-hidden bg-zinc-100 relative border-t border-x border-zinc-200/50">
+                        <div class="mt-auto min-h-[220px] md:min-h-0 aspect-[3/2] md:aspect-[21/9] rounded-t-2xl overflow-hidden bg-zinc-100 relative border-t border-x border-zinc-200/50 pt-6 md:pt-0">
                             <!-- Abstract UI Representation -->
                             <div class="absolute inset-0 bg-gradient-to-br from-[#b89818]/10 to-zinc-100/50"></div>
-                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-white rounded-xl shadow-lg border border-zinc-200/50 p-6 flex flex-col gap-4 transform group-hover:scale-105 transition-transform duration-700">
-                                <div class="w-1/3 h-4 bg-zinc-100 rounded"></div>
-                                <div class="w-full h-12 bg-zinc-50 border border-zinc-100 rounded-lg flex items-center px-4"><span class="text-xs text-zinc-400 font-medium">Guia do Mês - DAS</span></div>
-                                <div class="flex gap-4">
-                                    <div class="w-1/2 h-12 bg-zinc-50 border border-zinc-100 rounded-lg flex items-center justify-center"><span class="text-xs text-zinc-500 font-medium">Baixar PDF</span></div>
-                                    <div class="w-1/2 h-12 bg-zinc-50 border border-zinc-100 rounded-lg flex items-center justify-center"><span class="text-xs text-zinc-500 font-medium">Copiar Código</span></div>
+                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] md:w-3/4 max-w-[320px] h-[85%] md:h-3/4 max-h-[280px] bg-white rounded-xl shadow-lg border border-zinc-200/50 p-4 md:p-6 flex flex-col gap-2 md:gap-4 transform group-hover:scale-105 transition-transform duration-700">
+                                <div class="w-1/3 h-3 md:h-4 bg-zinc-100 rounded"></div>
+                                <div class="w-full h-10 md:h-12 bg-zinc-50 border border-zinc-100 rounded-lg flex items-center px-3 md:px-4"><span class="text-xs text-zinc-400 font-medium">Guia do Mês - DAS</span></div>
+                                <div class="flex gap-2 md:gap-4">
+                                    <div class="w-1/2 h-10 md:h-12 bg-zinc-50 border border-zinc-100 rounded-lg flex items-center justify-center"><span class="text-xs text-zinc-500 font-medium">Baixar PDF</span></div>
+                                    <div class="w-1/2 h-10 md:h-12 bg-zinc-50 border border-zinc-100 rounded-lg flex items-center justify-center"><span class="text-xs text-zinc-500 font-medium">Copiar Código</span></div>
                                 </div>
-                                <div class="mt-auto w-full h-12 bg-zinc-900 rounded-lg flex items-center justify-center group-hover:bg-[#b89818] transition-colors">
+                                <div class="mt-auto w-full h-10 md:h-12 bg-zinc-900 rounded-lg flex items-center justify-center group-hover:bg-[#b89818] transition-colors">
                                     <span class="text-xs text-white font-medium">Pagar Agora</span>
                                 </div>
                             </div>
-                            <div class="absolute bottom-4 left-4">
-                                <span class="px-3 py-1.5 bg-white/90 backdrop-blur text-xs font-medium text-zinc-600 rounded-full shadow-sm border border-zinc-200/50">Portal Seguro</span>
+                            <div class="absolute bottom-3 left-3 md:bottom-4 md:left-4">
+                                <span class="px-2.5 py-1 md:px-3 md:py-1.5 bg-white/90 backdrop-blur text-xs font-medium text-zinc-600 rounded-full shadow-sm border border-zinc-200/50">Portal Seguro</span>
                             </div>
                         </div>
                     </div>
@@ -423,10 +436,10 @@
                 <div class="card-flashlight rounded-3xl p-8 flex flex-col group cursor-pointer shadow-sm min-h-[300px]">
                     <div class="relative z-10 h-full flex flex-col">
                         <div class="flex justify-between items-start mb-8">
-                            <h3 class="text-2xl tracking-tight font-light">Velocidade que o mercado não acompanha</h3>
+                            <h3 class="text-2xl tracking-tight font-light">Velocidade que faz diferença no dia a dia</h3>
                             <iconify-icon icon="solar:arrow-right-up-linear" class="text-xl opacity-0 group-hover:opacity-100 group-hover:text-[#b89818] transition-all"></iconify-icon>
                         </div>
-                        <p class="text-sm text-zinc-500 font-light mb-4">Demonstração financeira para o banco? 5 minutos. Certidão? Minutos. Guia do mês? No app. Enquanto seu contador atual lê seu e-mail, a gente já resolveu.</p>
+                        <p class="text-sm text-zinc-500 font-light mb-4">Demonstração financeira para o banco? 5 minutos. Certidão? Minutos. Guia do mês? No app. Na Hórus, quando você precisa, a resposta vem em minutos.</p>
                         <div class="mt-auto relative w-full h-32 flex items-center justify-center">
                             <div class="absolute w-40 h-24 border border-zinc-200/80 rounded-xl -rotate-6 bg-white shadow-sm transition-transform duration-500 group-hover:-rotate-12 group-hover:-translate-x-2 group-hover:border-[#b89818]/30"></div>
                             <div class="absolute w-40 h-24 border border-zinc-200 rounded-xl rotate-6 bg-zinc-50 shadow-md left-8 transition-transform duration-500 group-hover:rotate-12 group-hover:translate-x-2 group-hover:border-[#b89818]/50 flex flex-col justify-center px-4">
@@ -472,7 +485,7 @@
                     <div class="flex items-center gap-2 text-sm text-zinc-600 font-light"><span class="text-[#b89818] font-medium">✔</span> Profissionais que vão abrir empresa pela primeira vez</div>
                     <div class="flex items-center gap-2 text-sm text-zinc-600 font-light"><span class="text-[#b89818] font-medium">✔</span> Prestadores de serviço que faturam como PJ</div>
                     <div class="flex items-center gap-2 text-sm text-zinc-600 font-light"><span class="text-[#b89818] font-medium">✔</span> Empresas que precisam de contabilidade rápida e organizada</div>
-                    <div class="flex items-center gap-2 text-sm text-zinc-600 font-light"><span class="text-[#b89818] font-medium">✔</span> Empresários cansados de contadores lentos ou difíceis de acessar</div>
+                    <div class="flex items-center gap-2 text-sm text-zinc-600 font-light"><span class="text-[#b89818] font-medium">✔</span> Empresários que valorizam agilidade e acesso fácil à contabilidade</div>
                 </div>
             </div>
 
@@ -727,19 +740,19 @@
                 <div class="flex gap-6 items-start mb-12 p-6 bg-white border border-zinc-200 rounded-2xl shadow-sm hover:border-[#b89818]/30 transition-colors">
                     <iconify-icon icon="solar:chat-round-check-linear" class="text-3xl text-[#b89818] flex-shrink-0 mt-1"></iconify-icon>
                     <div>
-                        <p class="font-medium tracking-widest mb-4 text-[10px] uppercase text-zinc-400">Na nossa conversa, analisamos:</p>
+                        <p class="font-medium tracking-widest mb-4 text-[10px] uppercase text-zinc-400">Na nossa conversa, você conhece:</p>
                         <ul class="space-y-3 text-sm text-zinc-600 font-light">
                             <li class="flex items-center gap-3">
                                 <span class="w-1.5 h-1.5 rounded-full bg-[#b89818]/60"></span>
-                                Se seu tipo de empresa está correto
+                                Como funciona o atendimento e o app da Hórus
                             </li>
                             <li class="flex items-center gap-3">
                                 <span class="w-1.5 h-1.5 rounded-full bg-[#b89818]/60"></span>
-                                Se você está pagando mais imposto do que deveria
+                                Qual plano faz mais sentido para sua empresa
                             </li>
                             <li class="flex items-center gap-3">
                                 <span class="w-1.5 h-1.5 rounded-full bg-[#b89818]/60"></span>
-                                A forma mais simples de organizar sua contabilidade
+                                Como é o processo de entrada ou abertura
                             </li>
                         </ul>
                     </div>
@@ -764,7 +777,7 @@
                     <p class="text-[10px] font-semibold tracking-widest uppercase text-zinc-400 mb-6 group-hover:text-[#b89818] transition-colors">Eles poderiam ter escolhido qualquer contabilidade. Escolheram a Hórus.</p>
                     <iconify-icon icon="solar:quote-left-bold" class="text-4xl text-zinc-200 mb-6 group-hover:text-[#b89818]/20 transition-colors"></iconify-icon>
                     <p class="text-xl md:text-2xl font-light text-zinc-800 leading-snug tracking-tight mb-8">
-                        "Meu contador anterior enrolava semanas para entregar documentos básicos. A Hórus resolveu tudo em minutos. O atendimento humano e a velocidade do app são impressionantes."
+                        "A Hórus resolveu em minutos o que eu costumava esperar semanas para receber. O atendimento humano e a velocidade do app são impressionantes."
                     </p>
                     <div class="flex items-center gap-4">
                         <div class="w-10 h-10 rounded-full bg-[#b89818]/10 border border-[#b89818]/20 flex items-center justify-center">
@@ -847,7 +860,7 @@
 
             <div class="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-zinc-100">
                 <div class="flex items-center gap-6 text-xs text-zinc-400 font-light">
-                    <span>© 2026 Hórus Gestão Financeira e Contábil.</span>
+                    <span>© 2026 Hórus Gestão Financeira e Contábil. CRC/MG nº [INSERIR NÚMERO DO REGISTRO]</span>
                 </div>
                 
             </div>
@@ -998,8 +1011,34 @@
         }
 
         // Fechar com ESC
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+                closeMobileMenu();
+            }
+        });
         // ===== FIM MODAL =====
+
+        // ===== MOBILE MENU =====
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const closeIcon = document.getElementById('close-icon');
+            menu.classList.toggle('hidden');
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+            document.body.style.overflow = menu.classList.contains('hidden') ? '' : 'hidden';
+        }
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const closeIcon = document.getElementById('close-icon');
+            menu.classList.add('hidden');
+            hamburgerIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+        // ===== FIM MOBILE MENU =====
 
         document.addEventListener('DOMContentLoaded', () => {
             // Flashlight Effect
